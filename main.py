@@ -145,7 +145,7 @@ class Game:
 
     def draw_ground(self):
         for pos in self.ground_positions:
-            self.screen.blit(self.ground, (pos, 694))
+            self.screen.blit(self.ground, (pos, 690))
 
     def move_ground(self):
         if not self.waiting_for_start and not self.game_over:
@@ -173,7 +173,7 @@ class Game:
                 distance_since_last_pipe = config.SCREEN_WIDTH
 
             if distance_since_last_pipe >= self.pipe_distance:
-                pipe_height = randint(-240, 140)
+                pipe_height = randint(-160, 120)
                 pipe_gap = randint(140, 300)
                 self.btm_pipe = Pipe(config.SCREEN_WIDTH, int(config.SCREEN_HEIGHT / 2) + pipe_height, -1, pipe_gap)
                 self.top_pipe = Pipe(config.SCREEN_WIDTH, int(config.SCREEN_HEIGHT / 2) + pipe_height, 1, pipe_gap)
@@ -186,7 +186,7 @@ class Game:
 
         # Check ground collision 
         if self.flappy.rect.bottom >= 680:
-            self.flappy.rect.bottom = 680
+            # self.flappy.rect.bottom = 680
             self.game_over = True
 
         # Check screen collision
