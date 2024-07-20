@@ -173,8 +173,8 @@ class Game:
                 distance_since_last_pipe = config.SCREEN_WIDTH
 
             if distance_since_last_pipe >= self.pipe_distance:
-                pipe_height = randint(-160, 120)
-                pipe_gap = randint(140, 300)
+                pipe_height = randint(-200, 100)
+                pipe_gap = randint(135, 350)
                 self.btm_pipe = Pipe(config.SCREEN_WIDTH, int(config.SCREEN_HEIGHT / 2) + pipe_height, -1, pipe_gap)
                 self.top_pipe = Pipe(config.SCREEN_WIDTH, int(config.SCREEN_HEIGHT / 2) + pipe_height, 1, pipe_gap)
                 self.pipe_group.add(self.btm_pipe, self.top_pipe)
